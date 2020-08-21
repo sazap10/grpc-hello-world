@@ -6,13 +6,13 @@ import (
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 
-	"github.com/sazap10/grpc-hello-world/pkg/chat"
+	"github.com/sazap10/grpc-hello-world/grpcgen/chat-service"
 )
 
 func main() {
 
 	var conn *grpc.ClientConn
-	conn, err := grpc.Dial(":9000", grpc.WithInsecure())
+	conn, err := grpc.Dial("server:9000", grpc.WithInsecure())
 	if err != nil {
 		log.Fatalf("did not connect: %s", err)
 	}
